@@ -2,20 +2,20 @@
 $(document).ready(function() { 
 	$(':input').blur(function () {
 		if($(this).val().length > 0) {
-			dataLayer.push([
-				'event': 'formtouch',
-				'eventCategory': $(this).closest('form').attr('id'),
+			dataLayer.push({
+				'event': 'form touch',
+				'eventCategory': 'form tracking',
 				'eventAction': 'completed',
-				'eventLabel': $(this).attr('name')
-			]);
+				'eventLabel': $(this).closest('form').attr('class') + ' : ' + $(this).attr('name')
+			});
 		} 
 		else {
-			dataLayer.push([
-				'event': 'formtouch',
-				'eventCategory': $(this).closest('form').attr('id'),
+			dataLayer.push({
+				'event': 'form touch',
+				'eventCategory': 'form tracking',
 				'eventAction': 'skipped',
-				'eventLabel': $(this).attr('name')
-			]);
+				'eventLabel': $(this).closest('form').attr('class') + ' : ' + $(this).attr('name')
+			});
 		}
 	});
 });
