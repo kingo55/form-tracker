@@ -6,7 +6,8 @@ $(document).ready(function() {
 				'event': 'form touch',
 				'eventCategory': 'form tracking',
 				'eventAction': 'completed',
-				'eventLabel': $(this).closest('form').attr('class') + ' : ' + $(this).attr('name')
+				'eventLabel': $(this).closest('form').attr('class') + ' : ' + $(this).attr('name'),
+				'eventValue': 1
 			});
 		} 
 		else {
@@ -14,7 +15,8 @@ $(document).ready(function() {
 				'event': 'form touch',
 				'eventCategory': 'form tracking',
 				'eventAction': 'skipped',
-				'eventLabel': $(this).closest('form').attr('class') + ' : ' + $(this).attr('name')
+				'eventLabel': $(this).closest('form').attr('class') + ' : ' + $(this).attr('name'),
+				'eventValue': 0
 			});
 		}
 	});
